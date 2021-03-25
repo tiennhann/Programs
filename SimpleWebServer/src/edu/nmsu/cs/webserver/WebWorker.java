@@ -138,7 +138,7 @@ public class WebWorker implements Runnable
 					System.out.println(request);
 					if(request.equals("./"))
 					{
-						System.out.println("This server works!");
+						System.out.println("This server works");
 
 					}
 
