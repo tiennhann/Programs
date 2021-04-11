@@ -10,15 +10,14 @@
       <delete dir="${bin}"/>
    </target>
 
-   <target name="compile" depends="clean" description="compiles java file">   
+   <target name="build" depends="clean" description="compiles java file">   
       <delete dir="${bin}"/>
       <mkdir dir="${bin}"/>
       <javac srcdir="${src}" destdir="${bin}"/>
    </target>
 	
-   <target name="run" depends="compile" description="run WebServer.java on port 8080">
-      <java classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}" >
-      </java>
+   <target name="run" depends="build" description="run WebServer.java on port 8080">
+      <java dir="www" classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}" fork="true" />
    </target>
    
 </project>
