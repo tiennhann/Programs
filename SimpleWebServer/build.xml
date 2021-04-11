@@ -1,26 +1,24 @@
-<project name="SimpleWebServer" default = "complieclean" basedir=".">
+<project name="SimpleWebServer" default = "run" basedir=".">
 	<description>
 		clean and complie SimpoleWebServer with the default argument is 8080
 	</description>
 	<property name="src" location="src/"/>
-	<property naem="bin" location="bin/"/>
+	<property name="bin" location="bin/"/>
    
 	<!-- Compile the java code from ${src} into ${bin}-->
-	<target name="compile" description="compiles java file">
-		<mkdir dir=" ${bin}"/>
+   <target name="clean" description="Cleans up .class file found in bin">
+		<delete dir="${bin}"/>
+	</target>
+
+	<target name="compile" depends="clean" description="compiles java file">
+      <delete dir="${bin}"/>
+		<mkdir dir="${bin}"/>
 		<javac srcdir="${src}" destdir="${bin}"/>
 	</target>
 	
-	<target name="clean" description="Cleans up .class file found in bin">
-		<delete dir="${bin}"/>
-	</target>
-	
-	<target name="complieclean" depends="compile,clean"/>
-
-
-	<target name="run" description="run WebServer.java on port 8080" >
-			<java classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}">
-				<arg value="8080"/>
-			</java>
-	</target>		
+	<target name="run" depends="compile" description="run WebServer.java on port 8080">
+			<java classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}" >
+         </java>
+   </target>
+   
 </project>
