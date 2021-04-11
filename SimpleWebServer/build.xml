@@ -17,7 +17,8 @@
    </target>
 	
    <target name="run" depends="build" description="run WebServer.java on port 8080">
-      <java dir="www" classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}" fork="true" />
+      <java classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}"  />
+      <java/>
    </target>
    
 </project>
