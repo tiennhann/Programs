@@ -17,8 +17,8 @@
 	</target>
 	
 	<target name="run" depends="compile" description="run WebServer.java on port 8080">
-			<java classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}" >
-         </java>
+		<java classname="edu.nmsu.cs.webserver.WebServer" classpath="${bin}" >
+      </java>
    </target>
    
 </project>
