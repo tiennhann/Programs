@@ -37,34 +37,42 @@ public class RacingScore2
 	public int overallScore()
 	{
 		int s, s1, s2;
-		if (score1 < score2 && score1 < score3)
+		// make a change from less than to less than or equal, which make program
+		// can choose the correct number
+		if (score1 <= score2 && score1 <= score3)
 		{
 			s1 = score2;
 			s2 = score3;
 		}
-		else if (score2 < score1 && score2 < score3)
+		else if (score2 <= score1 && score2 <= score3)
 		{
 			s1 = score1;
 			s2 = score2;
 		}
-		else if (score3 < score1 && score3 < score2)
+		else //if (score3 <= score1 && score3 <= score2)
 		{
 			s1 = score1;
 			s2 = score2;
 		}
-		else
+		/*else
 		{
 			s1 = 99;
 			s2 = 99;
-		}
-		s = s1 + s2;
+		} */
+		s = s1 + s2; 
 		return s;
 	}
 
 	public static void main(String args[])
 	{
 		int s1, s2, s3;
-		if (args == null || args.length != 3)
+		if (args.length == 0)
+		{
+			System.err.println("Error: must supply not be null!");
+			return;
+		}
+
+		else if (args.length != 3) 
 		{
 			System.err.println("Error: must supply three arguments!");
 			return;

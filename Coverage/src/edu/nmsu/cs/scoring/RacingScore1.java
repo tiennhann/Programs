@@ -39,7 +39,7 @@ public class RacingScore1
 	{
 		int s;
 		if (score1 < score2)
-			s = score2;
+			s = score1;
 		else
 			s = score1;
 		if (s > score3)
