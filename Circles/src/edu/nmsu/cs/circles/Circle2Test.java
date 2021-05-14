@@ -1,4 +1,3 @@
-  
 package edu.nmsu.cs.circles;
 
 /***
@@ -12,9 +11,9 @@ package edu.nmsu.cs.circles;
 
 import org.junit.*;
 
-public class Circle1Test {
+public class Circle2Test {
 	// Data you need for each test case
-	private Circle1 circle1;
+	private Circle2 circle2;
 
 	//
 	// Stuff you want to do before each test case
@@ -22,7 +21,7 @@ public class Circle1Test {
 	@Before
 	public void setup() {
 		System.out.println("\nTest starting...");
-		circle1 = new Circle1(1, 2, 3);
+		circle2 = new Circle2(1, 2, 3);
 	}
 
 	//
@@ -40,7 +39,7 @@ public class Circle1Test {
 	public void simpleMove() {
 		Point p;
 		System.out.println("Running test simpleMove.");
-		p = circle1.moveBy(1, 1);
+		p = circle2.moveBy(1, 1);
 		Assert.assertTrue(p.x == 2 && p.y == 3);
 	}
 
@@ -51,28 +50,28 @@ public class Circle1Test {
 	public void simpleMoveNeg() {
 		Point p;
 		System.out.println("Running test simpleMoveNeg.");
-		p = circle1.moveBy(-1, -1);
+		p = circle2.moveBy(-1, -1);
 		Assert.assertTrue(p.x == 0 && p.y == 1);
 	}
 
 	@Test
 	public void testIntersects1() {
 		System.out.println("Running test testIntersects1.");
-		Circle circle2 = new Circle1(2, 2, 6);
-		Assert.assertTrue(circle1.intersects(circle2));
+		Circle circleTest = new Circle2(2, 2, 6);
+		Assert.assertTrue(circle2.intersects(circleTest));
 	}
 
 	@Test
 	public void testIntersects2() {
 		System.out.println("Running test testIntersects1.");
-		Circle circle2 = new Circle1(20, 20, 6);
-		Assert.assertFalse(circle1.intersects(circle2));
+		Circle circleTest = new Circle2(20, 20, 6);
+		Assert.assertFalse(circle2.intersects(circleTest));
 	}
 
 	@Test
 	public void testScale() {
-		circle1.scale(10);
-		Assert.assertTrue(circle1.radius == 13);
+		circle2.scale(10);
+		Assert.assertTrue(circle2.radius == 13);
 	}
 
 	/***
